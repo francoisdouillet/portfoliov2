@@ -1,0 +1,233 @@
+@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Jost:wght@400;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Jost";
+}
+
+li {
+  list-style-type: none;
+}
+
+@mixin mobile {
+    @media screen and (max-width: 767px) {
+      @content;
+    }
+  }
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+
+.header {
+  background: #9e7b9b;
+  max-width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+  @include mobile {
+    height: auto;
+  }
+  &__nav {
+    padding: 0px 50px 0px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 4px solid white;
+    color: white;
+    @include mobile {
+      display: none;
+    }
+    & a {
+      font-family: "Abril+Fatface";
+      font-size: 6rem;
+      font-weight: 700;
+      color: white;
+      text-decoration: none;
+    }
+    & ul {
+      display: flex;
+      & li a {
+        margin-left: 40px;
+        font-size: 1.7rem;
+        text-decoration: none;
+        color: white;
+        cursor: pointer;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+  &__main {
+    height: 85vh;
+    display: flex;
+    align-items: center;
+    @include mobile {
+      flex-direction: column-reverse;
+      height: auto;
+      padding: 20px;
+    }
+    &--title {
+      @include mobile {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        text-align: center;
+      }
+      & h1 {
+        font-size: 4rem;
+        font-weight: 400;
+      }
+      & h2 {
+        color: #fff;
+        font-size: 4rem;
+        @include mobile {
+          font-size: 3rem;
+        }
+      }
+      & button {
+        margin-top: 30px;
+        border: 2px solid black;
+        border-radius: 10px;
+        background: transparent;
+        padding: 0px 7px 0px 7px;
+        font-size: 2rem;
+        cursor: pointer;
+        transition: all 0.3s;
+        & i {
+          padding: 0px 7px 0px 7px;
+        }
+        &:hover {
+          border: 2px solid white;
+          color: white;
+        }
+        & a:hover {
+          color: white;
+        }
+      }
+    }
+    & img {
+      margin-left: 10%;
+      margin-right: 10%;
+      width: 24.3125rem;
+      height: auto;
+      border-radius: 20px;
+      @include mobile {
+        width: 80vw;
+      }
+    }
+  }
+}
+
+.main {
+  background: #616283;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  &__section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: #9e7b9b;
+    width: 80vw;
+    padding: 10px;
+    margin: 70px 0px 70px 0px;
+    border-radius: 20px;
+    color: white;
+    & h2 {
+      font-size: 2.25rem;
+      position: relative;
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 7.87525rem;
+        height: 3px;
+        background-color: white;
+      }
+    }
+    & p {
+      padding-top: 20px;
+      font-size: 1.5rem;
+    }
+    & ul {
+      padding-top: 20px;
+      font-size: 1.5rem;
+    }
+    &--uldisplay {
+      display: flex;
+      & li {
+        margin-right: 20px;
+        font-size: 2.5rem;
+      }
+    }
+    &--card {
+      display: flex;
+      justify-content: space-between;
+      height: 21.8125rem;
+      margin: 40px;
+      @include mobile {
+        flex-direction: column;
+        margin: 10px;
+        height: auto;
+      }
+      & a {
+        width: 19.5rem;
+        overflow: hidden;
+        border-radius: 20px;
+        position: relative;
+        &:hover {
+          transition: all 0.3s;
+          transform: scale(1.01);
+        }
+        @include mobile {
+          width: auto;
+          height: 50vh;
+          margin-bottom: 20px;
+        }
+        & p {
+          width: 100%;
+          background: #616283;
+          position: absolute;
+          padding: 10px;
+          font-size: 1.5rem;
+          bottom: 0;
+          color: white;
+          @include mobile {
+            width: 100%;
+          }
+        }
+        & img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+}
+
+.footer {
+    background: #9e7b9b;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 40px 10px 40px;
+    color: white;
+    font-size: 1.75rem;
+    & div i {
+        margin: 20px;
+        font-size: 2.5rem;
+        color: white;
+    }
+    @include mobile {
+      padding: 10px;
+    }
+}
